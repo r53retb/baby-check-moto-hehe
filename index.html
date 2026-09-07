@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Para Sa'yo, Baby Ko 🥺💖</title>
+    <title>Para Sa'yo, Mahal Ko 🥺💖</title>
     <style>
         body {
             margin: 0;
@@ -33,7 +33,6 @@
             display: none !important;
         }
 
-        /* Animated Emoji Icon Circle */
         .icon-circle {
             width: 120px;
             height: 120px;
@@ -83,7 +82,7 @@
             border: none;
             border-radius: 50px;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
         }
 
         .primary-btn {
@@ -100,8 +99,9 @@
         #noBtn {
             background-color: #a0aab2;
             color: white;
-            position: absolute;
             box-shadow: 0 6px 15px rgba(160, 170, 178, 0.4);
+            /* Naka-static muna para magkatabi sila nang maayos sa gitna */
+            position: relative;
         }
 
         .final-screen h1 {
@@ -116,16 +116,16 @@
         <!-- PAGE 1: INTRO -->
         <div id="page1">
             <div class="icon-circle">🥺</div>
-            <h1>Hi, Baby...</h1>
-            <p>May gusto sana akong sabihin sa'yo. Pindutin mo to oh, sana magustuhan mo hahhaah dami ko kase eme eh, please? 💌</p>
-            <button class="primary-btn" onclick="goToPage2()">I have something to tell you po...</button>
+            <h1>Hi, Babe...</h1>
+            <p>May gusto sana akong sabihin sa'yo. Pindutin mo to oh, basahin mo muna please? 💌</p>
+            <button class="primary-btn" onclick="goToPage2()">I have something to tell you...</button>
         </div>
 
         <!-- PAGE 2: MAIN SORRY SCREEN -->
         <div id="page2" class="hidden">
             <div class="icon-circle">😭</div>
-            <h1>Sorry na po, Baby ko!</h1>
-            <p>Alam kong nagtampo ka. Patawarin mo na ako, please? Pangako babawi me! 💖</p>
+            <h1>Sorry na po, Mahal ko!</h1>
+            <p>Alam kong medyo nagtampo ka. Patawarin mo na ako, please? Pangako babawi ako! 💖</p>
             
             <div class="buttons">
                 <button id="yesBtn" class="primary-btn" onclick="goToPage3()">Opo, forgiven ka na! ❤️</button>
@@ -136,7 +136,7 @@
         <!-- PAGE 3: FINAL SCREEN -->
         <div id="page3" class="hidden final-screen">
             <div class="icon-circle">🥰</div>
-            <h1>Yey! Thank you, Baby ko!</h1>
+            <h1>Yey! Thank you, Mahal ko!</h1>
             <p><b>I will be better</b> para sa'ting dalawa, at higit sa lahat...</p>
             <p style="font-size: 20px; color: #d63384; font-weight: bold;">I love you so, so much! 🌙✨</p>
         </div>
@@ -150,9 +150,11 @@
         }
 
         const noBtn = document.getElementById('noBtn');
+
         function moveButton() {
-            const maxX = window.innerWidth - noBtn.offsetWidth - 100;
-            const maxY = window.innerHeight - noBtn.offsetHeight - 100;
+            // Kapag tinapatan ng mouse o pinindot, magiging fixed position na siya para lumipad
+            const maxX = window.innerWidth - noBtn.offsetWidth - 50;
+            const maxY = window.innerHeight - noBtn.offsetHeight - 50;
 
             const randomX = Math.max(20, Math.floor(Math.random() * maxX));
             const randomY = Math.max(20, Math.floor(Math.random() * maxY));
